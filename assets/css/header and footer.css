@@ -1,0 +1,55 @@
+
+.main-bg-color{
+    background-color: rgba(255,250,246,255);
+}
+.footer-bg-color{
+    background-color: rgba(57, 31, 0, 1);
+}
+
+.main-ff{
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul{
+    color: rgba(36, 20, 0, 1);;
+}
+
+span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    width: 55px; 
+}
+
+.nav-ul li a{
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(36, 20, 0, 1) ;
+    font-size: 14px;
+
+}
+.nav-ul li a:hover{
+    color:  rgba(225, 106, 0, 1);
+    border-bottom: 1px solid  rgba(225, 106, 0, 1);
+
+}
+
+.actived{
+    color:  rgba(225, 106, 0, 1) !important;
+    border-bottom: 1px solid  rgba(225, 106, 0, 1);
+}
+.join:hover{
+    cursor: pointer;
+}
+
+/* grid */
+@media (max-width: 991.99px) {
+    .actived{
+        color:  rgba(225, 106, 0, 1);
+        border-bottom: none;
+    }
+  
+  }
+  
+  
+
