@@ -15,7 +15,7 @@ button {
     overflow: hidden;
 }
 
-.year {
+.aboutBook-year {
     background: #2F80ED;
     box-shadow: 0px 3px 8px rgba(225, 106, 0, 0.19);
     border-radius: 3px;
@@ -41,7 +41,7 @@ p {
     padding: 10px;
 }
 
-.comment {
+.aboutBook-comment {
     width: 607.19px;
     height: 60px;
     background: rgba(255, 255, 255, 0.8);
@@ -52,14 +52,14 @@ p {
     margin-top: 150px;
 }
 
-.send-button {
+.aboutBook-send-button {
     width: 60.11px;
     height: 60px;
     border-radius: 5px;
     background: #E16A00;
     border-radius: 5px;
 }
-.comment-section{
+.aboutBook-comment-section{
     width: 607.19px;
     height: auto;
     margin-bottom: 200px;
@@ -68,7 +68,7 @@ p {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 
 }
-.comment-section > .comment-name{
+.aboutBook-comment-section > .aboutBook-comment-name{
     font-size: 20px;
     padding-left: 20px;
     font-weight: 900;
@@ -78,12 +78,16 @@ p {
     flex-direction: column-reverse;
     text-align: center;
     align-items: center;
-    
+    overflow: hidden;
    }
-   .comment{
+   .aboutBook-comment{
     width: auto;
    }
    .book-img{
-    margin-right: 100%;
+    width: 100px;
    }
+   .aboutBook-comment-section{
+   width: auto;
+}
+
 }
