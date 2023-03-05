@@ -1,0 +1,30 @@
+.about-store {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: #241400;
+
+}
+.about-text {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #241400;
+    line-height: 1.8em;
+}
+
+.about-all {
+    margin-top: 144px;
+    overflow: hidden;
+}
+
+@media (max-width: 991.99px) {
+    .about-about {
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        overflow: hidden;
+    } 
+    .about-img{
+        width: 100%;
+        height: auto;
+    }
+}
+
