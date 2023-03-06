@@ -77,9 +77,9 @@
             </ul>
 
             <div
-              class="d-flex align-items-center justify-content-center mt-3 mt-lg-0 header-join"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+            class="d-flex align-items-center justify-content-center mt-3 mt-lg-0 header-join"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
             >
               <img src="../photos/Profile.png" alt="" />
               <span class="ms-2 header-span">Join us</span>
@@ -203,5 +203,58 @@
         </div>
       </div>
     </footer>
+
+
+
+
+    
+  <!-- Home Join Section -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+            <div class="home-join-title text-center mb-3"><h1>Join Us</h1></div>
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" class="form-control form-control-lg py-3 rounded-0"
+                        id="home-join-name">
+                </div>
+                <div class="form-group mt-4 mb-5">
+                    <input type="email" placeholder="Email" class="form-control form-control-lg py-3 rounded-0"
+                        id="home-join-email">
+                </div>
+
+
+                <div class="alert alert-danger mt-4 join-error" role="alert" style="display: none;">
+                    <h4 class="alert-heading">Error</h4>
+                    <p></p>
+                    <p class="mb-0">Please check form</p>
+                </div>
+
+                <div class="alert alert-success mt-4 join-success" role="alert" style="display: none;">
+                    <h4 class="alert-heading">Successful</h4>
+                    <p></p>
+                    <p class="mb-0">Welcome to the library</p>
+                </div>
+            </form>
+        </div>
+
+        <div class="px-4 mb-3 text-center mx-auto w-100">
+            <button type="button" class="home-join-buton w-100 py-3 rounded-0" id="home-join-btn">Join</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Home Join Section -->
+
+    <script src="../js/header.js"></script>
+    <script src="../js/about.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
   </body>
 </html>

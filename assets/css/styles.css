@@ -15,6 +15,28 @@
     overflow: hidden;
 }
 
+
+.home-join-title h1{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 54px;
+    text-align: center;
+  }
+  
+  .home-join-buton {
+    background-color: rgba(225, 106, 0, 1);
+    color: white;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 196.19%;
+    border: none;
+    width: 100%;
+  }
+
 @media (max-width: 991.99px) {
     .about-about {
         flex-direction: column-reverse;
