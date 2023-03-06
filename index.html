@@ -1,12 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/header and footer.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap"
+      rel="stylesheet"
+    />
+
+   
+
+    <link rel="icon" type="image/x-icon" href="assets/photos/tab icon.png" />
+
     <title>Library Bookstore</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!--Header starts-->
+
+    <header class="pt-3 sticky-top mb-5">
+      <nav class="navbar navbar-expand-lg main-bg-color py-4">
+        <div class="container">
+          <img src="assets/photos/main logo.png" alt="" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav nav w-100 justify-content-center header-nav-ul m-lg-0 mt-4"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-active p-0 my-2 mx-md-3 text-center header-actived"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link p-0 my-2 mx-md-3 text-center"
+                  href="assets/pages/catalog.html"
+                  >Catalog</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link p-0 my-2 mx-md-3 text-center"
+                  href="assets/pages/about.html"
+                  >About Store</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link p-0 my-2 mx-md-3 text-center"
+                  href="assets/pages/contact.html"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link p-0 my-2 mx-md-3 text-center"
+                  href="assets/pages/search.html"
+                  >Search</a
+                >
+              </li>
+            </ul>
+
+            <div
+              class="d-flex align-items-center justify-content-center mt-3 mt-lg-0 header-join" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            >
+              <img src="assets/photos/Profile.png" alt="" />
+              <span class="ms-2 header-span" >Join us</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Header ends-->
+
+    <!--Info section starts-->
+
+    <section id="home-info">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-12 col-md-5 mb-5 mb-lg-0">
+            <div class="px-0 px-xxl-5 home-info-buton-container">
+              <h1 class="h1 home-a-z">Books from A to Z</h1>
+              <p class="home-info-text">
+                In our store you can find a book for every taste. A large
+                assortment. Nice prices. Interesting stories.
+              </p>
+              <button class="buton px-lg-4 py-2 pe-lg-5">Go to catalog</button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="">
+              <img
+                src="assets/photos/main image.png"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Info section ends-->
+
+    <!--Catalog section starts-->
+
+    <section id="home-catalog-section">
+      <div class="container">
+        <div class="row my-5">
+          <div class="col-md-12 mb-5">
+            <div class="mt-5 text-center home-catalog-title">
+              <h1>Catalog</h1>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="row" id="home-catalog-list">
+              <div class="col-md-4 mb-4">
+                <div class="card shadow cursor-pointer py-1 py-lg-3">
+                  <div class="card-body">
+                    <h4 class="card-title m-0 text-center h5 font-weight-bold">
+                      Books
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card shadow cursor-pointer py-1 py-lg-3">
+                  <div class="card-body">
+                    <h4 class="card-title m-0 text-center h5 font-weight-bold">
+                      Electronic books
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card shadow cursor-pointer py-1 py-lg-3">
+                  <div class="card-body">
+                    <h4 class="card-title m-0 text-center h5 font-weight-bold">
+                      Audiobooks
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card shadow cursor-pointer py-1 py-lg-3">
+                  <div class="card-body">
+                    <h4 class="card-title m-0 text-center h5 font-weight-bold">
+                      Toys
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card shadow cursor-pointer py-1 py-lg-3">
+                  <div class="card-body">
+                    <h4 class="card-title m-0 text-center h5 font-weight-bold">
+                      Book accessories
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card shadow cursor-pointer py-1 py-lg-3">
+                  <div class="card-body">
+                    <h4 class="card-title m-0 text-center h5 font-weight-bold">
+                      Notepads
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="card shadow cursor-pointer py-1 py-lg-3">
+                  <div class="card-body">
+                    <h4 class="card-title m-0 text-center h5 font-weight-bold">
+                      Board games
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Catalog section ends-->
+
+    <!--Statistics section starts-->
+
+    <section id="home-statistics">
+      <div class="container">
+        <div class="row my-5">
+          <div class="col-md-12 mb-5">
+            <div class="mt-5 text-center home-statistics-title">
+              <h1>About Store</h1>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row justify-content-between home-statistics-values">
+              <div class="col-10 col-lg-3 mx-auto">
+                <div
+                  class="d-flex align-items-center justify-content-lg-center justify-content-around"
+                >
+                  <span class="me-4">35</span>
+                  <p class="m-0">Branches the country</p>
+                </div>
+              </div>
+              <div class="col-10 col-lg-3 mx-auto">
+                <div
+                  class="d-flex align-items-center justify-content-lg-center justify-content-around"
+                >
+                  <span class="me-4">898</span>
+                  <p class="m-0">Products catalog</p>
+                </div>
+              </div>
+              <div class="col-10 col-lg-3 mx-auto">
+                <div
+                  class="d-flex align-items-center justify-content-lg-center justify-content-around"
+                >
+                  <span class="me-4">8659</span>
+                  <p class="m-0">Buyers review</p>
+                </div>
+              </div>
+              <div class="col-10 col-lg-3 mx-auto">
+                <div
+                  class="d-flex align-items-center justify-content-lg-center justify-content-around"
+                >
+                  <span class="me-4">72</span>
+                  <p class="m-0">Hours delivery to cities</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Statistics section ends-->
+
+
+
+
+    <!--Delivery section starts-->
+    <section id="home-delivery">
+
+        <div class="container">
+
+            <div class="row my-5">
+                <div class="col-md-12 mb-5">
+                    <div class="text-center home-delivery-title">Delivery</div>
+                    <div class="text-center home-delivery-info">
+                        We work without holidays and weekends! Residents of Kiev can receive an order on the day of
+                        its registration. Customers from other cities of Ukraine can receive an order within 1-5
+                        days, depending on the location of the settlement and the selected delivery method. Orders
+                        over UAH 1000 are delivered free of charge *. You can see the available methods, exact terms
+                        and cost of delivery during checkout in the order basket, after selecting the delivery city.
+                        More details
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+     <!--Delivery section ends-->
+
+
+
+
+
+
+    <!--Footer section starts-->
+
+    <footer class="mt-5">
+      <div class="row m-0">
+        <div class="col-md-12 mb-5">
+          <div class="row justify-content-center mb-5">
+            <div class="col-10 col-lg-4 p-0 mb-5">
+              <div class="text-center text-main">
+                <h1 class="h3 mb-4 follow">Follow us on social media</h1>
+                <div class="row justify-content-center footer-icons">
+                  <div class="col-md-3 m-2">
+                    <a href="facebook.com">
+                      <img src="assets/photos/facebook.png" alt="facebook"
+                    /></a>
+                  </div>
+                  <div class="col-md-3 m-2">
+                    <a href="twitter.com"
+                      ><img src="assets/photos/twitter.png" alt="twitter"
+                    /></a>
+                  </div>
+                  <div class="col-md-3 m-2">
+                    <a href="instagram.com">
+                      <img src="assets/photos/instagram.png" alt="instagram"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 mt-5 p-0 footer-main">
+          <div class="p-4 pb-0 m-0">
+            <div class="container">
+              <div class="row py-4 align-items-center">
+                <div class="col-md-6">
+                  <div class="footer-logo mb-4 mb-lg-0">
+                    <img
+                      width="200"
+                      src="assets/photos/footer logo.png"
+                      alt="footer-logo"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <ul class="p-0">
+                        <li class="list-group-item footer-list-title">
+                          Popular
+                        </li>
+                        <li class="list-group-item">Programming</li>
+                        <li class="list-group-item">Books for children</li>
+                        <li class="list-group-item">Psychology</li>
+                        <li class="list-group-item">Business</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4">
+                      <ul class="p-0">
+                        <li class="list-group-item footer-list-title">Cash</li>
+                        <li class="list-group-item">Delivery</li>
+                        <li class="list-group-item">Payment</li>
+                        <li class="list-group-item">About the Store</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4">
+                      <ul class="p-0">
+                        <li class="list-group-item footer-list-title">Help</li>
+                        <li class="list-group-item">Contacts</li>
+                        <li class="list-group-item">Purchase returns</li>
+                        <li class="list-group-item">Buyer help</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-md-12">
+                  <div class="footer-privacy mx-auto text-center">
+                    <p>
+                      All rights reserved © 2003-2021 LIBRARY TERMS OF USE |
+                      Privacy Policy
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--Footer section  ends-->
+
+
+
+
+
+
+  
+  <!-- Home Join Section -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+            <div class="home-join-title text-center mb-3"><h1>Join Us</h1></div>
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" class="form-control form-control-lg py-3 rounded-0"
+                        id="home-join-name">
+                </div>
+                <div class="form-group mt-4 mb-5">
+                    <input type="email" placeholder="Email" class="form-control form-control-lg py-3 rounded-0"
+                        id="home-join-email">
+                </div>
+
+
+                <div class="alert alert-danger mt-4 join-error" role="alert" style="display: none;">
+                    <h4 class="alert-heading">Error</h4>
+                    <p></p>
+                    <p class="mb-0">Please check form</p>
+                </div>
+
+                <div class="alert alert-success mt-4 join-success" role="alert" style="display: none;">
+                    <h4 class="alert-heading">Successful</h4>
+                    <p></p>
+                    <p class="mb-0">Welcome to the library</p>
+                </div>
+            </form>
+        </div>
+
+        <div class="px-4 mb-3 text-center mx-auto w-100">
+            <button type="button" class="home-join-buton w-100 py-3 rounded-0" id="home-join-btn">Join</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Home Join Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Script links-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script src="assets/js/header.js"></script>
+
+    <script src="assets/js/bootstrap.js"></script>
+
+    <script src="assets/js/index.js"></script>
+  </body>
 </html>

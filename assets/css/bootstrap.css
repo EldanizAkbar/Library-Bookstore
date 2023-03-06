@@ -5453,7 +5453,7 @@ textarea.form-control-lg {
   --bs-modal-footer-border-color: var(--bs-border-color);
   --bs-modal-footer-border-width: var(--bs-border-width);
   position: fixed;
-  top: 0;
+  top: 150px;
   left: 0;
   z-index: var(--bs-modal-zindex);
   display: none;
