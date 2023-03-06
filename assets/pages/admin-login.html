@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   	<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="../css/bootstrap.css" />	
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap"
+      rel="stylesheet"
+    />
+
+	<link rel="icon" type="image/x-icon" href="../photos/tab icon.png" />
+
+    <link rel="stylesheet" href="../css/admin.css" />
+
+    <title>Admin Panel | Library Book Store</title>
+  </head>
+
+  <body>
+
+
+	<header id="admin-login-header">
+		<div class="container-fluid  px-1 px-md-5 pt-5">
+			<nav class="navbar navbar-light">
+				<a class="navbar-brand" href="#">
+				  <img src="../photos/admin logo.png" alt="">
+				</a>
+			  </nav>
+		</div>
+
+	</header>
+
+	<section id="admin-login">
+		<div class="container">
+          <div class="col-12 col-md-7 mx-auto">
+			<div class="mt-5 px-0 px-lg-5" >
+				<div class="modal-dialog col-4 admin-login-box mx-auto">
+				  <div class="modal-content admin-login-box rounded-0 px-3 px-lg-5 py-5 mr-5">
+					
+					<div class="modal-body mb-5">
+						<div class="admin-login-title text-center mb-5"><h1>Welcome Admin</h1></div>
+						<form method="post">
+							<div class="form-group">
+								<input type="text" placeholder="Username" class="form-control form-control-lg py-3 rounded-0 mb-5"
+									id="admin-login-name">
+							</div>
+							<div class="form-group mt-4 mb-5">
+								<input type="password" placeholder="Password" class="form-control form-control-lg py-3 rounded-0"
+									id="admin-login-password">
+							</div>
+			
+			
+							<div class="alert alert-danger mt-4 join-error" role="alert" style="display: none;">
+								<h4 class="alert-heading">Error</h4>
+								<p></p>
+								<p class="mb-0">Please check form</p>
+							</div>
+			
+							<div class="alert alert-success mt-4 join-success" role="alert" style="display: none;">
+								<h4 class="alert-heading">Successful</h4>
+								<p></p>
+								<p class="mb-0">Welcome to the library</p>
+							</div>
+						</form>
+					</div>
+			
+					<div class="mb-3 text-center mx-auto w-100">
+						<button type="button" class="admin-login-buton w-100 py-3 rounded-0" id="admin-login-btn">Join</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+	
+			</div>
+		</div>
+	</section>
+
+
+
+	
+
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script src="../js/admin-login.js"></script>
+
+<script src="../js/firebase.js" type="module"></script>
+  </body>
+</html>
