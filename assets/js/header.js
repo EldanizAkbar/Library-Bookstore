@@ -6,7 +6,7 @@ window.addEventListener("scroll", function(){
        
     }
     else if(window.scrollY==0){
-        div1.className="sticky-top"
+        div1.className="pt-3 sticky-top"
        
     }
   

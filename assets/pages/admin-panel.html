@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/admin-panel.css" media="all" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/header and footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="../photos/admin tab icon.png" />
+    <title>Document</title>
+    <title>Admin Panel | Library Book Store</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row" id="adminPanel">
+
+
+
+                <!-- Admin Menu  section starts-->
+        <div class=" col-md-3 col-xl-2 px-2 admin-menu-bar">
+
+          
+        <section id="admin-panel-menu">
+          <div class="p-0 position-fixed mx-4">
+            <a href="admin-panel.html" class="">
+              <img
+                class="img-fluid mt-5"
+                src="../photos/admin logo.png"
+                alt=""
+              />
+            </a>
+
+            <a
+              href="#add-book"
+              class="d-flex align-items-center text-white mt-5 py-2 w-50"
+            >
+              <img
+                width="30"
+                class="img-fluid me-3"
+                src="../photos/admin book.png"
+                alt=""
+              />
+              <span> Home </span>
+            </a>
+
+            <a
+              href="#about-store"
+              class="d-flex align-items-center text-white mt-2 py-2 w-50"
+            >
+              <img
+                width="30"
+                class="img-fluid me-3"
+                src="../photos/admin book.png"
+                alt=""
+              />
+              <span> About </span>
+            </a>
+            <a
+              href="#join-us"
+              class="d-flex align-items-center text-white mt-2 py-2 w-50"
+            >
+              <img
+                width="30"
+                class="img-fluid me-3"
+                src="../photos/admin book.png"
+                alt=""
+              />
+              <span> Join us </span>
+            </a>
+            <a
+              href="#contact-us"
+              class="d-flex align-items-center text-white mt-2 py-2 w-50"
+            >
+              <img
+                width="30"
+                class="img-fluid me-3"
+                src="../photos/admin book.png"
+                alt=""
+              />
+              <span> Contact </span>
+            </a>
+
+            <a
+              href="admin-login.html"
+              class="d-flex align-items-center text-white mt-2 py-2 w-50"
+              id=""
+            >
+              <img
+                width="30"
+                class="img-fluid me-3"
+                src="../photos/admin book.png"
+                alt=""
+              />
+              <span id="adminLogout"> Logout </span>
+            </a>
+          </div>
+
+        </section>
+        </div>
+
+
+           <!-- Admin Menu  section ends-->
+          
+ 
+
+
+        <!-- Admin context section starts -->
+        <div class="col-12 col-md-9 col-xl-10">
+          <div class="row ms-2">
+
+            <!-- Admin header  starts-->
+            <div class="col-md-12 mb-5">
+              <div class="d-flex justify-content-end mt-5 mx-5">
+                <div class="d-flex align-items-center mt-1">
+                  <img
+                    src="../photos/Profile.png"
+                    class="img-fluid me-2"
+                    alt=""
+                  />
+                  <span class="admin-name">Admin</span>
+                </div>
+              </div>
+            </div>
+            <!-- Admin header  ends-->
+
+
+
+            <!-- Admin body -->
+            <div class="col-md-12">
+              <div class="row">
+                <!-- Search book section -->
+                <div class="col-md-12">
+                  <div class="admin-add-book mb-4" id="add-book">
+                    <h1>Add Book</h1>
+                  </div>
+                  <!-- Search Book -->
+                  <div class="search-book-section mb-5">
+                    <div class="mb-3 admin-add-book fs-18">
+                      <h1>Search book</h1>
+                    </div>
+                    <div>
+                      <!-- Search input group -->
+                      <div
+                        class="form-group d-flex w-50 align-items-center pe-5"
+                      >
+                        <input
+                          type="text"
+                          id="searchAdminInput"
+                          placeholder="Search Book"
+                          class="admin-search-input px-3 py-2 w-100"
+                          placeholder=""
+                          aria-describedby="helpId"
+                        />
+
+                        <a class="">
+                          <img
+                            src="../photos/Confirm Button.png"
+                            class="ms-2"
+                            alt=""
+                          />
+                        </a>
+
+                     
+                      </div>
+                    
+                    
+                    </div>
+                  </div>
+
+             
+                </div>
+
+             <!-- Add Book -->
+                <section class="mb-5">
+                  <div class="col-md-10 mb-5">
+                    <div class="mb-3 admin-add-book fs-18">
+                      <h1>Book form</h1>
+                    </div>
+                    <form class="admin-book-form p-5">
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Book Name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Author Name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Book Image Url</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Description</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Book Type</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+
+                      <button type="submit" class="buton w-100 mt-5 py-2">
+                        Add
+                      </button>
+                    </form>
+                  </div>
+                </section>
+
+                <div class="col-md-12 mt-5">
+                  <div class="admin-add-book mb-4" id="about-store">
+                    <h1>About Store</h1>
+                  </div>
+                </div>
+
+                <section>
+                  <div class="col-md-10 mb-5">
+                    <form class="admin-book-form p-5">
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Title</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Book Image Url</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="nameInputEmail1" class="form-label mb-3"
+                          >Description</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control mb-4"
+                          id="nameInputEmail1"
+                          aria-describedby="nameHelp"
+                        />
+                      </div>
+
+                      <button type="submit" class="buton w-100 mt-5 py-2">
+                        Add
+                      </button>
+                    </form>
+                  </div>
+                </section>
+
+                <!-- Join  Us section -->
+                <div class="col-md-12 my-5">
+                  <div class="admin-add-book mb-4 mt-5" id="join-us">
+                    <h1>Join us</h1>
+                  </div>
+                  <table class="table w-50 text-center">
+                    <thead class="bg-thead text-white">
+                      <tr>
+                        <th scope="col" class="">#</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email Address</th>
+                      </tr>
+                    </thead>
+                    <tbody id="joinTable" class="bg-tbody">
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Eldaniz</td>
+                        <td>eldenizekber@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Eldaniz</td>
+                        <td>eldenizekber@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Eldaniz</td>
+                        <td>eldenizekber@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Eldaniz</td>
+                        <td>eldenizekber@gmail.com</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+
+
+
+
+                 <!-- Contact  Us section -->
+                 <div class="col-md-10 mb-5 mt-5">
+                    <div class="admin-add-book mb-4 mt-5" id="contact-us">
+                      <h1>Contact us</h1>
+                    </div>
+                    <table class="table text-center">
+                      <thead class="bg-thead text-white">
+                        <tr>
+                          <th scope="col" class="">#</th>
+                          <th scope="col">Full Name</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Email Address</th>
+                          <th scope="col">Phone Number</th>
+                        </tr>
+                      </thead>
+                      <tbody id="joinTable" class="bg-tbody">
+                        <tr>    
+                            <th scope="row" class="">1</th>
+                            <td>Eldaniz Akbarzade</td>
+                            <td>Surakhani</td>
+                            <td>eldenizekber@gmail.com</td>
+                            <td>+994503404618</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="">1</th>
+                            <td>Eldaniz Akbarzade</td>
+                            <td>Surakhani</td>
+                            <td>eldenizekber@gmail.com</td>
+                            <td>+994503404618</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="">1</th>
+                            <td>Eldaniz Akbarzade</td>
+                            <td>Surakhani</td>
+                            <td>eldenizekber@gmail.com</td>
+                            <td>+994503404618</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="">1</th>
+                            <td>Eldaniz Akbarzade</td>
+                            <td>Surakhani</td>
+                            <td>eldenizekber@gmail.com</td>
+                            <td>+994503404618</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="">1</th>
+                            <td>Eldaniz Akbarzade</td>
+                            <td>Surakhani</td>
+                            <td>eldenizekber@gmail.com</td>
+                            <td>+994503404618</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+
+    
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script src="../js/admin-panel.js" type="module"></script>
+
+
+  </body>
+</html>
