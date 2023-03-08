@@ -29,9 +29,10 @@ button {
     margin-top: 100px;
 }
 
-.col6>img {
-    width: 330px;
-}
+
+.about-book img{
+    width: 100%;
+   }
 
 p {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -60,7 +61,7 @@ p {
     border-radius: 5px;
 }
 .aboutBook-comment-section{
-    width: 607.19px;
+    width: 686px;
     height: auto;
     margin-bottom: 200px;
     margin-top: 130px;
@@ -68,10 +69,9 @@ p {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 
 }
-.aboutBook-comment-section > .aboutBook-comment-name{
-    font-size: 20px;
-    padding-left: 20px;
-    font-weight: 900;
+
+.about-book-comm-name{
+    font-weight: bolder !important;
 }
 @media (max-width: 991.99px) {
    .about-book{
@@ -82,9 +82,6 @@ p {
    }
    .aboutBook-comment{
     width: auto;
-   }
-   .book-img{
-    width: 100px;
    }
    .aboutBook-comment-section{
    width: auto;

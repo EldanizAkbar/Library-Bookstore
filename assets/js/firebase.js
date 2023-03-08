@@ -109,7 +109,8 @@ function adminLogine(form) {
         form.username == user[i].userName &&
         form.password == user[i].password
       ) {
-        flag = true;
+       flag = true;
+
       }
 
     }
@@ -129,5 +130,10 @@ function adminLogine(form) {
         return;
       }
     }
+
+    
   );
+
 }
+
+

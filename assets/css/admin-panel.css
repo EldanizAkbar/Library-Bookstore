@@ -107,3 +107,57 @@
     margin-bottom: 0 !important;
     padding: 20px;
   }
+
+
+
+  #admin-panel-menuForMobile{
+    display: none ;
+  }
+  .adminHeaderMobile{
+    display: none;
+  }
+  @media (max-width:576px){
+    #admin-panel-menu{
+      display: none !important;
+    }
+    #admin-panel-menuForMobile{
+      display: none ;
+      background-color: #68141b;
+      background-color: #68141b;
+     color: #68141b;
+    }
+    .adminHeader{
+     display: none;
+    }
+    .adminHeaderMobile{
+      display: block;
+    }
+
+  }
+  @media (max-width:768px){
+    #admin-panel-menu{
+      display: none !important;
+    }
+    #admin-panel-menuForMobile{
+      display: none;
+      background-color: #68141b;
+    }
+    .adminHeader{
+      display: none;
+     }
+     .adminHeaderMobile{
+      display: block;
+    }
+  }
+
+
+  .overlay{
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+  }

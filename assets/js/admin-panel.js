@@ -20,6 +20,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const aboutAdmin = getDatabase(app);
 const joinMember = getDatabase(app);
 
 var logOut = $("#adminLogout");
@@ -96,3 +97,182 @@ onValue(ref(joinMember, "/contacts"), async (snapshot) => {
 });
 
 
+
+
+
+$(document).ready(function (e) {
+var check = JSON.parse(sessionStorage.getItem("admin"));
+if (!check) {
+  document.location.href = "admin-login.html";
+  return;
+}
+else{
+  return;
+}
+
+});
+
+
+$("#admin-about-store").on("click", async function (e) {
+  e.preventDefault();
+
+  let adminAboutTitle = $("#nameInputTitle");
+  let adminAboutDesc = $("#nameInputDesc");
+  let adminAboutUrl = $("#nameInputUrl");
+
+  if (
+    adminAboutTitle.val().trim().length <= 2 ||
+    adminAboutDesc.val().trim() === "" ||
+    adminAboutUrl.val().trim() === "" 
+  ) {
+    $(".join-error").fadeIn(10);
+    return;
+  }
+
+  let about = {
+    title: adminAboutTitle.val(),
+    desc: adminAboutDesc.val(),
+    url: adminAboutUrl.val(),
+  };
+
+  await set(ref(aboutAdmin, "/about"), about);
+  $(".join-error").fadeOut();
+  $(".join-success").fadeIn(10);
+
+  adminAboutTitle.val("");
+  adminAboutDesc.val("");
+  adminAboutUrl.val("");
+
+
+  setTimeout(function () {
+    $(".join-error").fadeOut();
+  $(".join-success").fadeOut();
+  }, 1000);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+$("#menuIconForMobile").click(function(){
+
+  if($(".overlay").css("display")=="none"){
+    $(".overlay").css("display","block");
+    $("#menuIconForMobile").removeClass("fa-solid fa-bars").addClass("fa-solid fa-xmark");
+  
+ }
+ else{
+    $(".overlay").css("display","none");
+    $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+ }
+
+
+if($("#admin-panel-menuForMobile").css("display")=="none"){
+   $("#admin-panel-menuForMobile").css("display","block");
+   $("#menuIconForMobile").removeClass("fa-solid fa-bars").addClass("fa-solid fa-xmark");
+}
+else{
+   $("#admin-panel-menuForMobile").css("display","none");
+   $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+}
+})
+$("#homeForMobile").click(function(){
+if($("#admin-panel-menuForMobile").css("display")=="block"){
+  $("#admin-panel-menuForMobile").css("display","none");
+  $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+
+}
+})
+$("#homeForMobile").click(function(){
+if($("#admin-panel-menuForMobile").css("display")=="block"){
+  $("#admin-panel-menuForMobile").css("display","none");
+  $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+
+}
+})
+$("#aboutForMobile").click(function(){
+
+if($("#admin-panel-menuForMobile").css("display")=="block"){
+  $("#admin-panel-menuForMobile").css("display","none");
+  $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+
+}
+})
+$("#joinUsForMobile").click(function(){
+
+if($("#admin-panel-menuForMobile").css("display")=="block"){
+  $("#admin-panel-menuForMobile").css("display","none");
+  $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+
+}
+})
+$("#contactForMobile").click(function(){
+
+if($("#admin-panel-menuForMobile").css("display")=="block"){
+  $("#admin-panel-menuForMobile").css("display","none");
+  $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+
+}
+})
+
+$("#logoutForMobile").click(function(){
+
+  sessionStorage.clear();
+
+if($("#admin-panel-menuForMobile").css("display")=="block"){
+  $("#admin-panel-menuForMobile").css("display","none");
+  $("#menuIconForMobile").removeClass("fa-solid fa-xmark").addClass("fa-solid fa-bars");
+
+}
+})
