@@ -26,8 +26,7 @@
   />
 
 
-    <title> $(document).unbind('scroll'); 
-      $('body').css({'overflow':'visible'});</title>
+    <title> Admin Panel | Library Book Store</title>
   </head>
 
   <body>
@@ -254,7 +253,7 @@
                     <div class="mb-3 admin-add-book fs-18">
                       <h1>Search book</h1>
                     </div>
-                    <div class="col-xl-5">
+                    <div class="ser col-xl-5">
                       <!-- Search input group -->
                       <div
                         class="form-group d-flex w-100 align-items-center"
@@ -266,9 +265,10 @@
                           class="admin-search-input px-3 py-2 w-100"
                           placeholder=""
                           aria-describedby="helpId"
+                          value=""
                         />
 
-                        <a class="">
+                        <a class="" id="btnSearch">
                           <img
                             src="../photos/Confirm Button.png"
                             class="ms-2"
@@ -276,6 +276,25 @@
                           />
                         </a>
                       </div>
+                      <div
+                      class="alert alert-danger mt-4 search-join-error"
+                      role="alert"
+                      style="display: none"
+                    >
+                      <h4 class="alert-heading">Error</h4>
+                      <p></p>
+                      <p class="mb-0">Please check form</p>
+                    </div>
+
+                    <div
+                      class="alert alert-success mt-4 search-join-success"
+                      role="alert"
+                      style="display: none"
+                    >
+                      <h4 class="alert-heading">Successful</h4>
+                      <p></p>
+                      <p class="mb-0">Welcome to the library</p>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -288,67 +307,96 @@
                     </div>
                     <form class="admin-book-form p-2 p-md-5">
                       <div class="mb-3">
-                        <label for="nameInputEmail1" class="form-label mb-3"
+                        <label for="bookName" class="form-label mb-3"
                           >Book Name</label
                         >
                         <input
                           type="text"
                           class="form-control mb-4"
-                          id="nameInputEmail1"
+                          id="bookName"
                           aria-describedby="nameHelp"
+                          value=""
                         />
                       </div>
                       <div class="mb-3">
-                        <label for="nameInputEmail1" class="form-label mb-3"
+                        <label for="authorName" class="form-label mb-3"
                           >Author Name</label
                         >
                         <input
                           type="text"
                           class="form-control mb-4"
-                          id="nameInputEmail1"
+                          id="authorName"
                           aria-describedby="nameHelp"
+                          value=""
                         />
                       </div>
                       <div class="mb-3">
-                        <label for="nameInputEmail1" class="form-label mb-3"
+                        <label for="bookImageUrl" class="form-label mb-3"
                           >Book Image Url</label
                         >
                         <input
                           type="text"
                           class="form-control mb-4"
-                          id="nameInputEmail1"
+                          id="bookImageUrl"
                           aria-describedby="nameHelp"
+                          value=""
                         />
                       </div>
                       <div class="mb-3">
-                        <label for="nameInputEmail1" class="form-label mb-3"
+                        <label for="bookDescription" class="form-label mb-3"
                           >Description</label
                         >
                         <input
                           type="text"
                           class="form-control mb-4"
-                          id="nameInputEmail1"
+                          id="bookDescription"
                           aria-describedby="nameHelp"
+                          value=""
                         />
                       </div>
                       <div class="mb-3">
-                        <label for="nameInputEmail1" class="form-label mb-3"
+                        <label for="bookType" class="form-label mb-3"
                           >Book Type</label
                         >
                         <input
                           type="text"
                           class="form-control mb-4"
-                          id="nameInputEmail1"
+                          id="bookType"
                           aria-describedby="nameHelp"
+                          value=""
                         />
                       </div>
 
-                      <button type="submit" class="buton w-100 mt-5 py-2">
+                      <div
+                      class="alert alert-danger mt-4 add-join-error"
+                      role="alert"
+                      style="display: none"
+                    >
+                      <h4 class="alert-heading">Error</h4>
+                      <p></p>
+                      <p class="mb-0">Please check form</p>
+                    </div>
+
+                    <div
+                      class="alert alert-success mt-4 add-join-success"
+                      role="alert"
+                      style="display: none"
+                    >
+                      <h4 class="alert-heading">Successful</h4>
+                      <p></p>
+                      <p class="mb-0">Welcome to the library</p>
+                    </div>
+
+
+                      <button type="submit" class="buton w-100 mt-5 py-2"  id="btnAdd">
                         Add
                       </button>
                     </form>
                   </div>
                 </section>
+
+
+
 
                 <div class="col-md-12 mt-5">
                   <div class="admin-add-book mb-4" id="about-store">
@@ -506,5 +554,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script src="../js/admin-panel.js" type="module"></script>
+    <script src="../js/admin.js" type="module"></script>
   </body>
 </html>

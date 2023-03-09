@@ -36,6 +36,9 @@
   border: 2px solid rgba(57, 31, 0, 0.48);
   border-radius: 34px;
 }
+#btnSearch:hover{
+  cursor: pointer;
+}
 .fs-18 h1 {
   font-size: 18px;
 }

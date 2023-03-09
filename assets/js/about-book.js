@@ -21,6 +21,87 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const comments = getDatabase(app);
+const db = getDatabase(app);
+
+$(document).ready(function () {
+  onValue(ref(db, "/selectedBook"), async (snapshot) => {
+    var book = await snapshot.val();
+
+ 
+   
+      var div = `
+         
+      <div class="row justify-content-between mt-5 align-items-center">
+      <div class="col-md-6 pb-5">
+        <div class="year-con mb-4">
+          <span class="year p-2 px-3">${book.publishedDate.slice(0,4)}</span>
+        </div>
+        <div class="about-title">
+          <h1 id="" class="p-0 m-0 mt-3">${book.title}</h1>
+        </div>
+        <div class="about-title mb-2">
+          <span id="">2 days ago added</span>
+        </div>
+        <div class="about-title mb-3"><h4 id="">${book.authorName}</h4></div>
+        <p class="about-desc" id=""> ${book.description}
+        </p>
+      </div>
+      <div class="col-md-5 col-lg-6 pb-5 text-center text-xl-end">
+        <img class="img-fluid w-50" src="${book.imageUrl}" id="" />
+      </div>
+    </div>
+
+          `;
+      $("#aboutBook").prepend(div);
+
+
+
+    
+   
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $("#send-comment").on("click", async function (e) {

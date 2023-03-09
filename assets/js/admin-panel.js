@@ -154,57 +154,6 @@ $("#admin-about-store").on("click", async function (e) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
 $("#menuIconForMobile").click(function(){
 
   if($(".overlay").css("display")=="none"){
@@ -276,3 +225,15 @@ if($("#admin-panel-menuForMobile").css("display")=="block"){
 
 }
 })
+
+
+
+
+
+
+
+
+
+
+
+
