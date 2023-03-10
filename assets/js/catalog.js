@@ -32,29 +32,42 @@ $(".search-title").on("click", async function (e) {
 });
 
 const myTimeout = setTimeout(myStopFunction, 3000);
+
+
 function myStopFunction() {
   $(".bg-orange").on("click", async function (e) {
     // e.preventDefault();
     let bookId = $(this).attr("id");
-    console.log(bookId);
+
+
     var selectedBookJson = {};
+
     await onValue(ref(db, `/books/${bookId}`), async (snapshot) => {
       selectedBookJson = await snapshot.val();
     });
-    await set(ref(db, `/selectedBook`), selectedBookJson);
-  });
-}
+    
+    localStorage.setItem("selectedBook", JSON.stringify(selectedBookJson));
+  //   await set(ref(db, `/selectedBook`), selectedBookJson);
+  // });)
+
+  console.log( localStorage.getItem("selectedBook",JSON.parse(selectedBookJson)));
+
+})
+
+};
+
 $(".categorize").on("click", async function (e) {
   onValue(ref(db, "/books"), async (snapshot) => {
     $("#first").slick("removeSlide", null, null, true);
 
     var booksJson = await snapshot.val();
-    let bookID = 1;
-    for (var index in booksJson) {
-      var book = booksJson[index];
+    for (var index=0; index<booksJson.length; index++) {
+      var book = booksJson[index+1];
       if (book.title.length > 15 || book.authorName.length > 15) {
         var newTitle = book.title.substring(0, 12) + "...";
         var newAuthor = book.authorName.substring(0, 12) + "...";
+        var bookID=index;
+        console.log(index);
       }
       var div = `
       <div>
@@ -81,7 +94,7 @@ $(".categorize").on("click", async function (e) {
       ) {
         $("#first").slick("slickAdd", div);
       }
-      bookID++;
+      // bookID++;
     }
   });
 });

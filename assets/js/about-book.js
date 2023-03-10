@@ -24,8 +24,8 @@ const comments = getDatabase(app);
 const db = getDatabase(app);
 
 $(document).ready(function () {
-  onValue(ref(db, "/selectedBook"), async (snapshot) => {
-    var book = await snapshot.val();
+ 
+    var book = JSON.parse(localStorage.getItem("selectedBook"));
 
  
    
@@ -52,13 +52,13 @@ $(document).ready(function () {
     </div>
 
           `;
-      $("#aboutBook").prepend(div);
+      $("#aboutBook").append(div);
 
 
 
     
    
-  });
+
 });
 
 
