@@ -23,7 +23,20 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 $(".search-title").on("click", async function (e) {
-  getData();
+  const elements = document.querySelector("#url");
+  elements.classList.remove("d-none");
+  setTimeout(function () {
+    getData();
+
+}, 2000);
+
+
+
+  setTimeout(function () {
+      elements.classList.add("d-none");
+
+  }, 2000);
+ 
 });
 
 $(".categorize").on("click", async function (e) {
@@ -99,6 +112,17 @@ $(document).ready(function () {
       });
     });
   }
+
+  setTimeout(function () {
+    const elements = document.querySelector("#url");
+
+      elements.classList.add("d-none");
+
+  }, 2000);
+
+
+
+
 
   $(".responsive").slick({
     dots: true,
@@ -199,6 +223,9 @@ function getData() {
       bookID++;
     }
   });
+
+
+ 
 }
 
 var category = document.querySelectorAll(".categorize");
