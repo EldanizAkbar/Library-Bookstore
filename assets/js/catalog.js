@@ -19,55 +19,32 @@ const firebaseConfig = {
   appId: "1:117848842273:web:f35b7d478136ce2517c360",
 };
 
-
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-
-$(document).ready(function () {
-  getData();
-});
 $(".search-title").on("click", async function (e) {
   getData();
 });
 
-const myTimeout = setTimeout(myStopFunction, 3000);
-
-
-function myStopFunction() {
-  $(".bg-orange").on("click", async function (e) {
-    // e.preventDefault();
-    let bookId = $(this).attr("id");
-
-
-    var selectedBookJson = {};
-
-    await onValue(ref(db, `/books/${bookId}`), async (snapshot) => {
-      selectedBookJson = await snapshot.val();
-    });
-    
-    localStorage.setItem("selectedBook", JSON.stringify(selectedBookJson));
-  //   await set(ref(db, `/selectedBook`), selectedBookJson);
-  // });)
-
-  console.log( localStorage.getItem("selectedBook",JSON.parse(selectedBookJson)));
-
-})
-
-};
-
 $(".categorize").on("click", async function (e) {
+  const elements = document.querySelectorAll(".categorize");
+
+  elements.forEach((element) => {
+    element.classList.remove("header-actived");
+  });
+
+  $(this).addClass("border-0 bg-transparent categorize header-actived");
+
   onValue(ref(db, "/books"), async (snapshot) => {
     $("#first").slick("removeSlide", null, null, true);
 
     var booksJson = await snapshot.val();
-    for (var index=0; index<booksJson.length; index++) {
-      var book = booksJson[index+1];
+    for (var index = 1; index < booksJson.length; index++) {
+      var book = booksJson[index];
       if (book.title.length > 15 || book.authorName.length > 15) {
         var newTitle = book.title.substring(0, 12) + "...";
         var newAuthor = book.authorName.substring(0, 12) + "...";
-        var bookID=index;
-        console.log(index);
+        var bookID = index;
       }
       var div = `
       <div>
@@ -94,11 +71,35 @@ $(".categorize").on("click", async function (e) {
       ) {
         $("#first").slick("slickAdd", div);
       }
-      // bookID++;
+      $(".bg-orange").on("click", async function (e) {
+        let bookId = $(this).attr("id");
+        var selectedBookJson = {};
+        await onValue(ref(db, `/books/${bookId}`), async (snapshot) => {
+          selectedBookJson = await snapshot.val();
+          localStorage.setItem(
+            "selectedBook",
+            JSON.stringify(selectedBookJson)
+          );
+        });
+      });
     }
   });
 });
 $(document).ready(function () {
+  getData();
+  const myTimeout = setTimeout(myStopFunction, 3000);
+
+  function myStopFunction() {
+    $(".bg-orange").on("click", async function (e) {
+      let bookId = $(this).attr("id");
+      var selectedBookJson = {};
+      await onValue(ref(db, `/books/${bookId}`), async (snapshot) => {
+        selectedBookJson = await snapshot.val();
+        localStorage.setItem("selectedBook", JSON.stringify(selectedBookJson));
+      });
+    });
+  }
+
   $(".responsive").slick({
     dots: true,
     // infinite: true,
@@ -146,10 +147,6 @@ $(document).ready(function () {
           slidesToScroll: 1,
         },
       },
-
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ],
   });
 });
@@ -199,42 +196,17 @@ function getData() {
       ) {
         $("#newReleases").slick("slickAdd", div);
       }
-
       bookID++;
     }
   });
 }
 
+var category = document.querySelectorAll(".categorize");
+console.log(category.length);
+var mas = [];
 
+for (var i = 0; i < category.length; i++) {
+  mas.push(category[i].innerText);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+localStorage.setItem("categories", JSON.stringify(mas));

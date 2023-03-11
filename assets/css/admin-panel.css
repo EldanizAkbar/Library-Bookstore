@@ -36,7 +36,7 @@
   border: 2px solid rgba(57, 31, 0, 0.48);
   border-radius: 34px;
 }
-#btnSearch:hover{
+#btnSearch:hover {
   cursor: pointer;
 }
 .fs-18 h1 {
@@ -80,7 +80,9 @@
   background-color: white;
 }
 
-.bg-tbody tr:nth-child(even) {background-color: #F9FAFC;}
+.bg-tbody tr:nth-child(even) {
+  background-color: #f9fafc;
+}
 
 .bg-thead tr th {
   font-family: "Nunito Sans";
@@ -102,65 +104,61 @@
 }
 
 .bg-tbody tr td {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 115%;
-    margin-bottom: 0 !important;
-    padding: 20px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 115%;
+  margin-bottom: 0 !important;
+  padding: 20px;
+}
+
+#admin-panel-menuForMobile {
+  display: none;
+}
+.adminHeaderMobile {
+  display: none;
+}
+@media (max-width: 576px) {
+  #admin-panel-menu {
+    display: none !important;
   }
-
-
-
-  #admin-panel-menuForMobile{
-    display: none ;
+  #admin-panel-menuForMobile {
+    display: none;
+    background-color: #68141b;
+    background-color: #68141b;
+    color: #68141b;
   }
-  .adminHeaderMobile{
+  .adminHeader {
     display: none;
   }
-  @media (max-width:576px){
-    #admin-panel-menu{
-      display: none !important;
-    }
-    #admin-panel-menuForMobile{
-      display: none ;
-      background-color: #68141b;
-      background-color: #68141b;
-     color: #68141b;
-    }
-    .adminHeader{
-     display: none;
-    }
-    .adminHeaderMobile{
-      display: block;
-    }
-
+  .adminHeaderMobile {
+    display: block;
   }
-  @media (max-width:768px){
-    #admin-panel-menu{
-      display: none !important;
-    }
-    #admin-panel-menuForMobile{
-      display: none;
-      background-color: #68141b;
-    }
-    .adminHeader{
-      display: none;
-     }
-     .adminHeaderMobile{
-      display: block;
-    }
+}
+@media (max-width: 768px) {
+  #admin-panel-menu {
+    display: none !important;
   }
-
-
-  .overlay{
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
+  #admin-panel-menuForMobile {
+    display: none;
+    background-color: #68141b;
   }
+  .adminHeader {
+    display: none;
+  }
+  .adminHeaderMobile {
+    display: block;
+  }
+}
+
+.overlay {
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}

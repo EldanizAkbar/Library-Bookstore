@@ -1,36 +1,34 @@
-body{
-   background-color: rgba(255, 250, 246, 255) !important;
+body {
+  background-color: rgba(255, 250, 246, 255) !important;
 }
 
-
-
-.generalContact input{
-   width: 100%;
-   margin-bottom: 20px;
-   border: 1px solid rgb(206, 212, 218);
-   border-radius: 4px;
-   padding: 20px 45px;
-   font-family: 'Roboto', sans-serif;
-   font-size: 20px;
-   color: #495057;
+.generalContact input {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid rgb(206, 212, 218);
+  border-radius: 4px;
+  padding: 20px 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #495057;
 }
-.generalContact{
+.generalContact {
   margin-top: 100px;
   margin-bottom: 200px;
 }
-.generalContact h2{
+.generalContact h2 {
   margin-bottom: 40px;
   font-size: 32px;
   font-weight: 700;
 }
-.generalContact input:focus{
+.generalContact input:focus {
   border: 1px solid #495057;
   outline: 4px solid rgb(163, 207, 251);
 }
-.generalContact button{
+.generalContact button {
   background-color: rgb(255, 139, 0);
   font-size: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: white;
   border: 1px none transparent;
   border-radius: 4px;
@@ -38,54 +36,51 @@ body{
   height: 75px;
   margin-top: 2rem;
 }
-.generalContact button:hover{
+.generalContact button:hover {
   background-color: rgb(226, 161, 82);
 }
-.inputSearch{
+.inputSearch {
   position: relative;
 }
-.inputSearch i{
+.inputSearch i {
   position: absolute;
   top: 28px;
   left: 20px;
   font-size: 16px;
   color: #212529;
 }
-.page{
+.page {
   max-width: 1000px;
   margin: 0 auto;
 }
-h1{
+h1 {
   margin: 40px 0;
   text-align: center;
 }
 
-
-
-.error{
+.error {
   color: #af4242;
   background-color: #fde8ec;
   padding: 10px;
   /*visibility: hidden;*/
   display: none;
 }
-.error.display-error{
-  display:  block;
+.error.display-error {
+  display: block;
   margin-bottom: 20px;
   transform: translateY(-20px);
 }
-.success{
+.success {
   margin-bottom: 30px;
   color: green;
   background-color: #d2ffd2;
   padding: 10px;
   display: none;
 }
-.success.display-success{
+.success.display-success {
   display: block;
 }
 
-
-form{
+form {
   margin: 0;
 }

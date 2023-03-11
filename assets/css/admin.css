@@ -1,7 +1,7 @@
 body {
   background-color: #720418;
 }
-.admin-login-title h1{
+.admin-login-title h1 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -22,8 +22,7 @@ body {
   width: 100%;
 }
 
-.admin-login-box{
+.admin-login-box {
   position: static !important;
   background-color: white;
-
 }

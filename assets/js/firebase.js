@@ -22,7 +22,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const adminLogin = getDatabase(app);
 
-
 $(document).ready(async function (e) {
   const admins = [
     {
@@ -53,12 +52,9 @@ $(document).ready(async function (e) {
   adminLogine(JSON.parse(sessionStorage.getItem("admin")));
 });
 
-
-$("#admin-login-logo").on("click",function(e){
+$("#admin-login-logo").on("click", function (e) {
   e.preventDefault();
-
-})
-
+});
 
 $("#admin-login-btn").on("click", function (e) {
   e.preventDefault();
@@ -83,7 +79,7 @@ $("#admin-login-btn").on("click", function (e) {
   setTimeout(function () {
     sessionStorage.setItem("admin", JSON.stringify(admin));
     adminLogine(JSON.parse(sessionStorage.getItem("admin")));
-  },1);
+  }, 1);
 
   adminLoginName.val("");
   adminLoginpassword.val("");
@@ -91,49 +87,39 @@ $("#admin-login-btn").on("click", function (e) {
 
 function adminLogine(form) {
   if (!form) {
-      return;
+    return;
   }
 
   onValue(ref(adminLogin, "/admins"), async (snapshot) => {
     const user = (await snapshot.val()) || {};
 
-    if (!form) {  
+    if (!form) {
       return;
     }
 
     let flag = false;
 
     for (var i = 0; i < user.length; i++) {
-  
       if (
         form.username == user[i].userName &&
         form.password == user[i].password
       ) {
-       flag = true;
-
-      }
-
-    }
-
-      if (flag == true) {
-        $(".join-error").fadeOut(50);
-        $(".join-success").fadeIn(50);
-
-        setTimeout(function () {
-          document.location.href = "admin-panel.html";
-        }, 500);
-
-        return;
-      } 
-      else {
-        $(".join-error").fadeIn(10);
-        return;
+        flag = true;
       }
     }
 
-    
-  );
+    if (flag == true) {
+      $(".join-error").fadeOut(50);
+      $(".join-success").fadeIn(50);
 
+      setTimeout(function () {
+        document.location.href = "admin-panel.html";
+      }, 500);
+
+      return;
+    } else {
+      $(".join-error").fadeIn(10);
+      return;
+    }
+  });
 }
-
-

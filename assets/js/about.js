@@ -22,14 +22,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const aboutAdmin = getDatabase(app);
 
-
 onValue(ref(aboutAdmin, "/about"), async (snapshot) => {
-  const about = (await snapshot.val());
-    if(!about){
-        return;
-    }
-    $("#title").html(about.title);
-    $("#desc").html(about.desc);
-    $("#url").attr("src", about.url);
-
+  const about = await snapshot.val();
+  if (!about) {
+    return;
+  }
+  $("#title").html(about.title);
+  $("#desc").html(about.desc);
+  $("#url").attr("src", about.url);
 });

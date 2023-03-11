@@ -35,6 +35,21 @@
   font-size: 25px;
   line-height: 196.19%;
 }
+#home-category {
+  transition: all 0.3s ease-in-out;
+}
+#home-category:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#home-category .card-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 196.19%;
+}
+
 .home-statistics-title h1 {
   font-family: "Montserrat";
   font-style: normal;
@@ -76,7 +91,7 @@
   font-size: 12px;
   line-height: 196.19%;
 }
-.home-join-title h1{
+.home-join-title h1 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -99,12 +114,11 @@
 
 /* grid */
 
-  @media (max-width: 770px) {
-    .home-info-buton-container {
-      text-align: center;
-    }
-    .buton {
-      width: 100%;
-    }
+@media (max-width: 770px) {
+  .home-info-buton-container {
+    text-align: center;
   }
-
+  .buton {
+    width: 100%;
+  }
+}

@@ -82,7 +82,7 @@ $(btnAdd).on("click", async function (e) {
     bookImageUrlInput.val().trim() === "" ||
     bookDescriptionInput.val().trim().length <= 10 ||
     bookDescriptionInput.val().trim() === ""
-     ) {
+  ) {
     $(".add-join-error").fadeIn(10);
     return;
   }
@@ -91,8 +91,6 @@ $(btnAdd).on("click", async function (e) {
 
   $(".add-join-success").fadeIn(15);
   $(".add-join-success").fadeOut(1500);
-
-
 
   await set(ref(db, "/booksCount"), ++booksCount);
 

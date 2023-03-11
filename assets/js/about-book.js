@@ -24,17 +24,14 @@ const comments = getDatabase(app);
 const db = getDatabase(app);
 
 $(document).ready(function () {
- 
-    var book = JSON.parse(localStorage.getItem("selectedBook"));
+  var book = JSON.parse(localStorage.getItem("selectedBook"));
 
- 
-   
-      var div = `
+  var div = `
          
       <div class="row justify-content-between mt-5 align-items-center">
       <div class="col-md-6 pb-5">
         <div class="year-con mb-4">
-          <span class="year p-2 px-3">${book.publishedDate.slice(0,4)}</span>
+          <span class="year p-2 px-3">${book.publishedDate.slice(0, 4)}</span>
         </div>
         <div class="about-title">
           <h1 id="" class="p-0 m-0 mt-3">${book.title}</h1>
@@ -52,85 +49,37 @@ $(document).ready(function () {
     </div>
 
           `;
-      $("#aboutBook").append(div);
-
-
-
-    
-   
-
+  $("#aboutBook").append(div);
+  // const myTimeout = setTimeout(stop, 3000);
+  // function stop() {
+  //   localStorage.removeItem("selectedBook");
+  // }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 $("#send-comment").on("click", async function (e) {
   e.preventDefault();
 
   let comment = $("#comment-input");
 
-  if (
-    comment.val().trim().length <= 2 ||
-    comment.val().trim() === "" 
-  ) {
+  if (comment.val().trim().length <= 2 || comment.val().trim() === "") {
     $(".join-error").fadeIn(10);
     return;
   }
 
-
   const d = new Date();
   const localTime = d.getTime();
   const localOffset = d.getTimezoneOffset() * 60000;
-   
+
   const utc = localTime + localOffset;
   const offset = 4; // UTC of Baku is +04.00
-  const baku = utc + (3600000 * offset);
-   
+  const baku = utc + 3600000 * offset;
+
   const bakuTimeNow = new Date(baku).toLocaleString();
 
   let userComment = {
-    comment: comment.val() ,
-    time:bakuTimeNow };
+    comment: comment.val(),
+    time: bakuTimeNow,
+  };
 
   const commentsBranch = ref(comments, "/comments");
 
@@ -146,12 +95,10 @@ $("#send-comment").on("click", async function (e) {
 
   comment.val("");
 
-//   setTimeout(function () {
-//     window.location.reload();
-//   }, 1000);
+  //   setTimeout(function () {
+  //     window.location.reload();
+  //   }, 1000);
 });
-
-
 
 let commentsContainer = $("#comments-container");
 
@@ -164,7 +111,6 @@ onValue(ref(comments, "/comments"), async (snapshot) => {
       id: item[0],
       ...item[1],
     };
-
   });
   commentsContainer.html(
     data
