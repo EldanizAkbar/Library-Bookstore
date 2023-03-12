@@ -128,9 +128,9 @@ $(document).ready(function () {
     dots: true,
     arrows: true,
     prevArrow:
-      "<span  class='priv_arrow'><i class='fa fa-angle-left fa-xl' aria-hidden='true'></i></span>",
+      "<span  class='priv_arrow ps-2'><i class='fa fa-chevron-left fa-xl' aria-hidden='true'></i></span>",
     nextArrow:
-      "<span class='next_arrow'><i class='fa-solid fa-chevron-right fa-xl'></i></span>",
+      "<span class='next_arrow pe-2'><i class='fa-solid fa-chevron-right fa-xl'></i></span>",
     speed: 300,
     slidesToShow: 5,
     slidesToScroll: 2,
@@ -152,7 +152,7 @@ $(document).ready(function () {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
 
@@ -161,6 +161,7 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: false,
         },
       },
       {
@@ -168,6 +169,7 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
@@ -186,7 +188,7 @@ function getData() {
       }
       var div = `
     <div>
-      <div class="card p-4 text-center rounded-0">
+      <div class="card p-2 p-xl-4 text-center rounded-0">
         <div class="img-wrapper">
           <img
             src="${book.imageUrl}"

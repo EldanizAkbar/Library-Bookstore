@@ -97,4 +97,8 @@
   .card .img-wrapper {
     height: 17em;
   }
+  .draggable {
+    margin-bottom: 20px !important;
+    height: 450px !important;
+  }
 }

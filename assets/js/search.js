@@ -54,6 +54,7 @@ $("#btn-search").on("click", async function (e) {
   onValue(ref(db, "/books"), async (snapshot) => {
    
     $("#first").slick("removeSlide", null, null, true);
+    var f=false;
     var booksJson = await snapshot.val();
     let bookID = 1;
     for (var index in booksJson) {
@@ -81,31 +82,30 @@ $("#btn-search").on("click", async function (e) {
       var re = new RegExp(searchInput, "i");
       if (book.hasOwnProperty("title") && book.title.search(re) > -1) {
         $("#first").slick("slickAdd", div);
-        $("#searchError").fadeOut(10);
-        $("#searchSuccess").fadeIn(150);
-        $("#searchSuccess").fadeOut(3000);
-        search.val("");
-        return;
-      }
-      else{
-        $("#searchSuccess").fadeOut(10);
-        $("#searchError #errorP").html("No any movies or series with this name in our database");
-        $("#searchError").fadeIn(150);
-        search.val("");
-      }
+        f=true;
+       }
+    
 
       bookID++;
     }
 
+
+    if (f) {
+      $("#first").slick("slickAdd", div);
+      $("#searchError").fadeOut(10);
+      $("#searchSuccess").fadeIn(150);
+      $("#searchSuccess").fadeOut(3000);
+
+      }
+    else{
+      $("#searchSuccess").fadeOut(10);
+      $("#searchError #errorP").html("No any movies or series with this name in our database");
+      $("#searchError").fadeIn(150);
+
+    }
+
   
   });
-
-  search.val("");
-
-
-
-
-
 
 
 });
@@ -117,7 +117,7 @@ $(document).ready(function () {
   $(".rightPartOnSearch").slick({
     arrows: true,
     prevArrow:
-      "<span  class='priv_arrow'><i class='fa fa-angle-left fa-xl' aria-hidden='true'></i></span>",
+      "<span  class='priv_arrow'><i class='fa fa-chevron-left fa-xl' aria-hidden='true'></i></span>",
     nextArrow:
       "<span class='next_arrow'><i class='fa-solid fa-chevron-right fa-xl'></i></span>",
     speed: 300,
