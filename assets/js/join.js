@@ -99,3 +99,15 @@ $("#home-join-btn").on("click", async function (e) {
     window.location.reload();
   }, 1250);
 });
+
+
+
+$(document).ready(function() {
+  $('input').keyup(function(event) {
+      if (event.which === 13)
+      {
+          event.preventDefault();
+          $('form').submit();
+      }
+  });
+});
