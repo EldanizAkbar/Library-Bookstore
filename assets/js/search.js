@@ -24,37 +24,32 @@ const db = getDatabase(app);
 $("#btn-search").on("click", async function (e) {
   e.preventDefault();
   let search = $("#search-input");
-  
-  if(search.val().trim() === "" 
-   ){
-      $("#searchSuccess").fadeOut(10);
-      $("#searchError #errorP").html("Field can not be empty");
-      $("#searchError").fadeIn(150);
-      search.val("");
-      return;
-   }
-   else if(search.val().length<3){
+
+  if (search.val().trim() === "") {
     $("#searchSuccess").fadeOut(10);
-    $("#searchError #errorP").html("Can not submit less than 3 strings");
-      $("#searchError").fadeIn(150);
-      search.val("");
-      return;
-   }
-   else if(search.val().length>22){
-    $("#searchSuccess").fadeOut(10);
-    $("#searchError #errorP").html("Can not submit more than 22 strings");
+    $("#searchError #errorP").html("Field can not be empty");
     $("#searchError").fadeIn(150);
     search.val("");
     return;
-   }
- 
+  } else if (search.val().length < 3) {
+    $("#searchSuccess").fadeOut(10);
+    $("#searchError #errorP").html("Can not search less than 3 strings");
+    $("#searchError").fadeIn(150);
+    search.val("");
+    return;
+  } else if (search.val().length > 22) {
+    $("#searchSuccess").fadeOut(10);
+    $("#searchError #errorP").html("Can not search more than 22 strings");
+    $("#searchError").fadeIn(150);
+    search.val("");
+    return;
+  }
 
   let searchInput = $("#search-input").val();
 
   onValue(ref(db, "/books"), async (snapshot) => {
-   
     $("#first").slick("removeSlide", null, null, true);
-    var f=false;
+    var f = false;
     var booksJson = await snapshot.val();
     let bookID = 1;
     for (var index in booksJson) {
@@ -82,32 +77,24 @@ $("#btn-search").on("click", async function (e) {
       var re = new RegExp(searchInput, "i");
       if (book.hasOwnProperty("title") && book.title.search(re) > -1) {
         $("#first").slick("slickAdd", div);
-        f=true;
-       }
-    
+        f = true;
+      }
 
       bookID++;
     }
 
-
     if (f) {
-      $("#first").slick("slickAdd", div);
       $("#searchError").fadeOut(10);
       $("#searchSuccess").fadeIn(150);
       $("#searchSuccess").fadeOut(3000);
-
-      }
-    else{
+    } else {
       $("#searchSuccess").fadeOut(10);
-      $("#searchError #errorP").html("No any movies or series with this name in our database");
+      $("#searchError #errorP").html(
+        "No any movies or series with this name in our database"
+      );
       $("#searchError").fadeIn(150);
-
     }
-
-  
   });
-
-
 });
 $(document).ready(function () {
   getData();
@@ -125,7 +112,7 @@ $(document).ready(function () {
     slidesToScroll: 1,
 
     autoplaySpeed: 2000,
-   });
+  });
 });
 
 function getData() {
@@ -164,10 +151,8 @@ function getData() {
 setTimeout(function () {
   const elements = document.querySelector("#url");
 
-    elements.classList.add("d-none");
-
+  elements.classList.add("d-none");
 }, 2000);
-
 
 function readMore() {
   const parentContainer = document.querySelector(".rightPartOnSearch");
