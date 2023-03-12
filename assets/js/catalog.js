@@ -162,6 +162,7 @@ $(document).ready(function () {
           slidesToShow: 2,
           slidesToScroll: 1,
           dots: false,
+          arrows: false
         },
       },
       {
@@ -170,6 +171,7 @@ $(document).ready(function () {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
+          arrows: false
         },
       },
     ],
@@ -204,6 +206,8 @@ function getData() {
       </div>
     </div>
     `;
+
+   
 
       $("#first").slick("slickAdd", div);
 

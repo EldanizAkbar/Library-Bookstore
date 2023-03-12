@@ -112,18 +112,28 @@ $(document).ready(function () {
     slidesToScroll: 1,
 
     autoplaySpeed: 2000,
+
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
+
   });
 });
 
 function getData() {
   onValue(ref(db, "/books"), async (snapshot) => {
     var booksJson = await snapshot.val();
-    let bookID = 1;
     for (var index in booksJson) {
       var book = booksJson[index];
 
-      var description = book.description.substring(0, 400) + "...";
-      var div = `
+      var description = book.description.substring(0, 400);
+      var textLeft= book.description.slice(400, book.description.length);
+      var divMore = `
         <div class="box">
            <div class="row p-3">
              <div class="col-lg-5 col-6 p-3">
@@ -134,7 +144,7 @@ function getData() {
                <p class="slider-aname">${book.authorName}</p>
                <p id="read-more">
                ${description}
-               <span class ="read-more-text">${book.description}</span>
+               <span class ="read-more-text">${textLeft}</span>
                </p>
                <span class="read-more-btn">Read More...</span>
              </div>
@@ -142,8 +152,35 @@ function getData() {
         </div>
       `;
 
-      $(".rightPartOnSearch").slick("slickAdd", div);
-      bookID++;
+      var divLess = `
+        <div class="box">
+           <div class="row p-3">
+             <div class="col-lg-5 col-6 p-3">
+               <img src="${book.imageUrl}" width="100%" alt="" />
+             </div>
+             <div class="col-lg-7 p-2 read-more-container">
+               <h2 class="mb-0">${book.title}</h2>
+               <p class="slider-aname">${book.authorName}</p>
+               <p id="read-more">
+               ${book.description}
+            
+               </p>
+           
+             </div>
+           </div>
+        </div>
+      `;
+
+       
+     
+
+   
+      if(book.description.length<=400){
+        $(".rightPartOnSearch").slick("slickAdd", divLess);
+      }
+      else{
+        $(".rightPartOnSearch").slick("slickAdd", divMore);
+      }
     }
   });
 }
@@ -174,3 +211,5 @@ function readMore() {
       : "Read More...";
   });
 }
+
+
