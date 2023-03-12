@@ -48,8 +48,9 @@ $(document).ready(async function (e) {
     },
   ];
   await set(ref(adminLogin, "/admins"), admins);
+  adminLogine(JSON.parse(localStorage.getItem("adminTrue")));
 
-  adminLogine(JSON.parse(sessionStorage.getItem("admin")));
+
 });
 
 $("#admin-login-logo").on("click", function (e) {
@@ -58,32 +59,49 @@ $("#admin-login-logo").on("click", function (e) {
 
 $("#admin-login-btn").on("click", function (e) {
   e.preventDefault();
-
   let adminLoginName = $("#admin-login-name");
-  let adminLoginpassword = $("#admin-login-password");
+  let adminLoginPassword = $("#admin-login-password");
+  
+if( adminLoginName.val().trim() === "" && adminLoginPassword.val().trim() === "" ){
+  $(".join-error #errorP").html("Please fill in the form");
+  $(".join-error").fadeIn(10);
+  return;
 
-  if (
-    adminLoginName.val().trim().length <= 2 ||
-    adminLoginName.val().trim() === "" ||
-    adminLoginpassword.val().trim() === ""
+
+ }
+
+  else if (
+    adminLoginName.val().trim() === ""
+    
   ) {
-    $(".join-error").fadeIn(50);
+    $(".join-error #errorP").html("Username can not be empty");
+    $(".join-error").fadeIn(10);
     return;
   }
 
+ else if ( adminLoginPassword.val().trim() === "" 
+ ){
+  $(".join-error #errorP").html("Password is required");
+  $(".join-error").fadeIn(10);
+  return;
+ }
+
+
   let admin = {
     username: adminLoginName.val(),
-    password: adminLoginpassword.val(),
+    password: adminLoginPassword.val(),
   };
 
   setTimeout(function () {
-    sessionStorage.setItem("admin", JSON.stringify(admin));
-    adminLogine(JSON.parse(sessionStorage.getItem("admin")));
+    localStorage.setItem("admin", JSON.stringify(admin));
+    adminLogine(JSON.parse(localStorage.getItem("admin")));
   }, 1);
 
   adminLoginName.val("");
-  adminLoginpassword.val("");
+  adminLoginPassword.val("");
 });
+
+
 
 function adminLogine(form) {
   if (!form) {
@@ -104,6 +122,7 @@ function adminLogine(form) {
         form.username == user[i].userName &&
         form.password == user[i].password
       ) {
+        localStorage.setItem("adminTrue", JSON.stringify(form));
         flag = true;
       }
     }
@@ -118,6 +137,7 @@ function adminLogine(form) {
 
       return;
     } else {
+      $(".join-error #errorP").html("Password or Username is incorrect");
       $(".join-error").fadeIn(10);
       return;
     }

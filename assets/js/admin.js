@@ -41,14 +41,20 @@ onValue(ref(db, "/booksCount"), async (snapshot) => {
 $(btnSearch).on("click", function (e) {
   e.preventDefault();
 
-  if (searchInput.val().trim().length <= 2 || searchInput.val().trim() === "") {
+  if (searchInput.val().trim() === "") {
+    $(".search-join-error #errorBookP").html("Search input can not be empty");
     $(".search-join-error").fadeIn(10);
     return;
   }
+  else if(searchInput.val().trim().length <= 2){
+    
+   $(".search-join-error #errorBookP").html("Can not search less than 3 symbols");
+   $(".search-join-error").fadeIn(10);
+   return;
 
-  $(".search-join-error").fadeOut();
-  $(".search-join-success").fadeIn(10);
-  $(".search-join-success").fadeOut(1000);
+  }
+
+  
 
   fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${searchInput.val()}&key=${api_key}`
@@ -67,7 +73,26 @@ $(btnSearch).on("click", function (e) {
       if (volumeInfo.hasOwnProperty("publishedDate")) {
         bookPublishedDate = volumeInfo.publishedDate;
       }
+      if(bookNameInput.val().trim() === ""){
+        $(".search-join-error #errorBookP").html("There is no book with this name");
+        $(".search-join-error").fadeIn(10);
+        return;
+      }
+  
+   
+
     });
+    
+    $(".search-join-error").fadeOut();
+    $(".search-join-success").fadeIn(10);
+    $(".search-join-success").fadeOut(1500);
+
+     
+
+
+
+
+
 });
 
 $(btnAdd).on("click", async function (e) {

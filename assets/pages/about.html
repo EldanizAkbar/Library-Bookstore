@@ -102,19 +102,24 @@
 
   <div class="container">
     <div class="row justify-content-between mt-5 align-items-center">
+
+      <div class="col-md-12 col-lg-12 pb-5 text-center mx-auto"  id="url1">
+          
+        <img class="img-fluid h-100 text-center mx-auto" src="../photos/loading spinner.gif" >
+
+          </div>
+
+  
+
+
         <div class="col-md-6 pb-5">
-            <div class="about-title mb-4" ><h1 id="title">About Store</h1></div>
-            <p class="about-desc" id="desc">We work without holidays and weekends! Residents
-                of Kiev can receive an order on the day of its registration. Customers from other cities of
-                Ukraine can receive an order within 1-5 days, depending on the location of the settlement and
-                the selected delivery method. Orders over UAH 1000 are delivered free of charge *. You can see
-                the available methods, exact terms and cost of delivery during checkout in the order basket,
-                after selecting the delivery city.
+            <div class="about-title mb-4" ><h1 id="title"></h1></div>
+            <p class="about-desc" id="desc">
             </p>
         </div>
         <div class="col-md-5 col-lg-6 pb-5 text-center text-xl-end">
           
-                <img class="img-fluid h-100" src="../photos/Spinner-1s-200px.gif"  id="url">
+                <img class="img-fluid h-100" src=""  id="url">
         
         </div>
     </div>
@@ -162,7 +167,7 @@
           <div class="p-4 pb-0 m-0">
             <div class="container">
               <div class="row py-4 align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="footer-logo mb-4 mb-lg-0">
                     <img
                       width="200"
@@ -171,9 +176,9 @@
                     />
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <ul class="p-0">
                         <li class="list-group-item footer-list-title">
                           Popular
@@ -184,7 +189,7 @@
                         <li class="list-group-item">Business</li>
                       </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <ul class="p-0">
                         <li class="list-group-item footer-list-title">Cash</li>
                         <li class="list-group-item">Delivery</li>
@@ -192,13 +197,20 @@
                         <li class="list-group-item">About the Store</li>
                       </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <ul class="p-0">
                         <li class="list-group-item footer-list-title">Help</li>
                         <li class="list-group-item">Contacts</li>
                         <li class="list-group-item">Purchase returns</li>
                         <li class="list-group-item">Buyer help</li>
                       </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                      <ul class="p-0 mt-3">
+                        <li class="list-group-item number text-center mb-3">+38 (071) 339-16-26</li>
+                        <li class="list-group-item"><button class="request w-100">Request a Call</button></li>
+                       
                     </div>
                   </div>
                 </div>
@@ -247,7 +259,7 @@
                 <div class="alert alert-danger mt-4 join-error" role="alert" style="display: none;">
                     <h4 class="alert-heading">Error</h4>
                     <p></p>
-                    <p class="mb-0">Please check form</p>
+                    <p id="errorP" class="mb-0">Please fill in the form</p>
                 </div>
 
                 <div class="alert alert-success mt-4 join-success" role="alert" style="display: none;">

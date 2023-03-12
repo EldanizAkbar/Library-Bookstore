@@ -26,13 +26,11 @@ const joinMember = getDatabase(app);
 var logOut = $("#adminLogout");
 
 logOut.on("click", function () {
-  sessionStorage.clear();
+  localStorage.clear();
 });
 
-if (JSON.parse(sessionStorage.getItem("admin"))) {
-  var adminName = JSON.parse(sessionStorage.getItem("admin"));
-  console.log(adminName);
-
+if (JSON.parse(localStorage.getItem("adminTrue"))) {
+  var adminName = JSON.parse(localStorage.getItem("adminTrue"));
   $(".admin-name").text(adminName.username);
 }
 
@@ -95,7 +93,7 @@ onValue(ref(joinMember, "/contacts"), async (snapshot) => {
 });
 
 $(document).ready(function (e) {
-  var check = JSON.parse(sessionStorage.getItem("admin"));
+  var check = JSON.parse(localStorage.getItem("adminTrue"));
   if (!check) {
     document.location.href = "admin-login.html";
     return;
@@ -139,6 +137,10 @@ $("#admin-about-store").on("click", async function (e) {
     $(".join-success").fadeOut();
   }, 1000);
 });
+
+
+
+
 
 $("#menuIconForMobile").click(function () {
   if ($(".overlay").css("display") == "none") {
@@ -207,7 +209,7 @@ $("#contactForMobile").click(function () {
 });
 
 $("#logoutForMobile").click(function () {
-  sessionStorage.clear();
+  localStorage.clear();
 
   if ($("#admin-panel-menuForMobile").css("display") == "block") {
     $("#admin-panel-menuForMobile").css("display", "none");

@@ -31,31 +31,45 @@ $("#contactBookBtn").on("click", async function (e) {
   let emailContact = $("#emailContact");
   let addressContact = $("#addressContact");
   let phoneContact = $("#phoneContact");
-  if (fullNameContact.val().trim() === "") {
-    sendContact = true;
-    $("#contactError #errorP").html("Full name can not be empty");
-    $("#contactError").fadeIn(150);
-    return;
-  } else if (emailContact.val().trim() === "") {
-    sendContact = true;
-    $("#contactError #errorP").html("Email can not be empty");
-    $("#contactError").fadeIn(150);
-    return;
-  } else if (!emailContact.val().trim().includes("@", ".")) {
-    sendContact = true;
-    $("#contactError #errorP").html("Email should contain @");
-    $("#contactError").fadeIn(150);
-    return;
-  } else if (addressContact.val().trim() === "") {
-    sendContact = true;
-    $("#contactError #errorP").html("Address can not be empty");
-    $("#contactError").fadeIn(150);
-    return;
-  } else if (phoneContact.val().trim() === "") {
-    sendContact = true;
-    $("#contactError #errorP").html("Phone can not be empty");
-    $("#contactError").fadeIn(150);
-    return;
+
+
+  if(fullNameContact.val().trim() === "" && emailContact.val().trim() === "" &&
+  addressContact.val().trim() === "" &&
+  phoneContact.val().trim() === ""
+  ){
+   sendContact = true;
+     $("#contactError #errorP").html("Fields can not be empty");
+     $("#contactError").fadeIn(150);
+     return;
+  }
+  else{
+   if (fullNameContact.val().trim() === "") {
+     sendContact = true;
+     $("#contactError #errorP").html("Full name can not be empty");
+     $("#contactError").fadeIn(150);
+     return;
+   } else if (emailContact.val().trim() === "") {
+     sendContact = true;
+     $("#contactError #errorP").html("Email can not be empty");
+     $("#contactError").fadeIn(150);
+     return;
+   } else if (!emailContact.val().trim().includes("@", ".")) {
+     sendContact = true;
+     $("#contactError #errorP").html("Email should contain @");
+     $("#contactError").fadeIn(150);
+     return;
+   } else if (addressContact.val().trim() === "") {
+     sendContact = true;
+     $("#contactError #errorP").html("Address can not be empty");
+     $("#contactError").fadeIn(150);
+     return;
+   } else if (phoneContact.val().trim() === "") {
+     sendContact = true;
+     $("#contactError #errorP").html("Phone can not be empty");
+     $("#contactError").fadeIn(150);
+     return;
+   }
+ 
   }
 
   let member = {
@@ -64,35 +78,6 @@ $("#contactBookBtn").on("click", async function (e) {
     address: addressContact.val(),
     phone: phoneContact.val(),
   };
-
-  // $("#contactBookBtn").on("click", async function (e) {
-  //     e.preventDefault();
-
-  //     let sendContact = false;
-
-  //     let fullNameContact = $("#fullNameContact");
-  //     let emailContact = $("#emailContact");
-  //     let addressContact = $("#addressContact");
-  //     let phoneContact = $("#phoneContact");
-
-  //     if (
-  //       fullNameContact.val().trim() === "" ||
-  //       emailContact.val().trim() === "" ||
-  //       !emailContact.val().trim().includes("@",".") ||
-  //       addressContact.val().trim() === "" ||
-  //       phoneContact.val().trim() === ""
-  //     ) {
-  //       sendContact = true;
-  //       $("#contactError").fadeIn(150);
-  //       return;
-  //     }
-
-  //     let member = {
-  //       fullName: fullNameContact.val(),
-  //       email: emailContact.val(),
-  //       address: addressContact.val(),
-  //       phone: phoneContact.val(),
-  //     };
 
   const contactBranch = ref(contactMember, "/contacts");
 

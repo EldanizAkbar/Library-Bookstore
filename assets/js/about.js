@@ -22,6 +22,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const aboutAdmin = getDatabase(app);
 
+
+
 onValue(ref(aboutAdmin, "/about"), async (snapshot) => {
   const about = await snapshot.val();
   if (!about) {
@@ -30,4 +32,11 @@ onValue(ref(aboutAdmin, "/about"), async (snapshot) => {
   $("#title").html(about.title);
   $("#desc").html(about.desc);
   $("#url").attr("src", about.url);
+
+  setTimeout(function () {
+    const elements = document.querySelector("#url1");
+  
+      elements.classList.add("d-none");
+  
+  });
 });

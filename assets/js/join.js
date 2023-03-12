@@ -37,20 +37,50 @@ $("#home-join-btn").on("click", async function (e) {
   let homeJoinName = $("#home-join-name");
   let homeJoinEmail = $("#home-join-email");
 
+ 
   if (
-    homeJoinName.val().trim().length <= 2 ||
-    homeJoinName.val().trim() === "" ||
-    homeJoinEmail.val().trim() === "" ||
-    !homeJoinEmail.val().trim().includes("@", ".")
+    homeJoinName.val().trim() === "" && homeJoinEmail.val().trim() === "" 
+    
   ) {
+
+   $(".join-error #errorP").html("Please fill in the form");
     $(".join-error").fadeIn(10);
     return;
   }
+
+
+  else if (
+    homeJoinName.val().trim() === ""
+    
+  ) {
+    $(".join-error #errorP").html("Full name can not be empty");
+    $(".join-error").fadeIn(10);
+    return;
+  }
+  else if(homeJoinName.val().trim().length <= 2 
+ ){
+  $(".join-error #errorP").html("Name field should have at least 2 strings");
+  $(".join-error").fadeIn(10);
+  return;
+ }
+ else if ( homeJoinEmail.val().trim() === "" 
+ ){
+  $(".join-error #errorP").html("Email is required");
+  $(".join-error").fadeIn(10);
+  return;
+ }
+ else if(!homeJoinEmail.val().trim().includes("@", ".")){
+  $(".join-error #errorP").html("Email can not be submitted without @ and . ");
+  $(".join-error").fadeIn(10);
+  return;
+ }
+
 
   let user = {
     username: homeJoinName.val(),
     email: homeJoinEmail.val(),
   };
+
 
   const membersBranch = ref(joinMember, "/users");
 
@@ -67,5 +97,5 @@ $("#home-join-btn").on("click", async function (e) {
 
   setTimeout(function () {
     window.location.reload();
-  }, 1000);
+  }, 1250);
 });

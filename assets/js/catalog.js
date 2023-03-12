@@ -126,7 +126,6 @@ $(document).ready(function () {
 
   $(".responsive").slick({
     dots: true,
-    // infinite: true,
     arrows: true,
     prevArrow:
       "<span  class='priv_arrow'><i class='fa fa-angle-left fa-xl' aria-hidden='true'></i></span>",
@@ -229,7 +228,6 @@ function getData() {
 }
 
 var category = document.querySelectorAll(".categorize");
-console.log(category.length);
 var mas = [];
 
 for (var i = 0; i < category.length; i++) {

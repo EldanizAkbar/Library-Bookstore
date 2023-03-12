@@ -28,7 +28,7 @@ $(document).ready(function () {
 
   var div = `
          
-      <div class="row justify-content-between mt-5 align-items-center">
+      <div class="row justify-content-between mt-5 align-items-start">
       <div class="col-md-6 pb-5">
         <div class="year-con mb-4">
           <span class="year p-2 px-3">${book.publishedDate.slice(0, 4)}</span>
@@ -50,10 +50,6 @@ $(document).ready(function () {
 
           `;
   $("#aboutBook").append(div);
-  // const myTimeout = setTimeout(stop, 3000);
-  // function stop() {
-  //   localStorage.removeItem("selectedBook");
-  // }
 });
 
 $("#send-comment").on("click", async function (e) {
@@ -95,9 +91,7 @@ $("#send-comment").on("click", async function (e) {
 
   comment.val("");
 
-  //   setTimeout(function () {
-  //     window.location.reload();
-  //   }, 1000);
+
 });
 
 let commentsContainer = $("#comments-container");

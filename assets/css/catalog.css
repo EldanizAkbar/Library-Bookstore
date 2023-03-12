@@ -40,21 +40,13 @@
 .bg-orange {
   width: 7.1rem;
   height: 29px;
-
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 12px;
-
-  /* or 24px */
-
   align-items: center;
   text-transform: uppercase;
-
   color: #ffffff;
-
-  /* 2цвет */
-
   background: #e16a00;
   box-shadow: 0px 3px 8px rgba(225, 106, 0, 0.19);
   border-radius: 3px;

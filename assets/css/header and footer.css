@@ -113,8 +113,11 @@ header {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
+}
+.scroller {
+  cursor: pointer;
 }
 
 /* Track */
@@ -132,6 +135,30 @@ header {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(225, 106, 0, 1);
+}
+
+.number {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900 !important;
+  font-size: 12px;
+  line-height: 196.19%;
+}
+
+.request {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 196.19%;
+  background-color: transparent;
+  border: 1px solid #e16a00;
+  color: #e16a00;
+  transition: all 0.2s ease-in-out;
+}
+.request:hover {
+  background-color: #e16a00;
+  color: white;
 }
 
 /* grid */

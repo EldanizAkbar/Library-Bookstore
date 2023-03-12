@@ -62,7 +62,6 @@ h1 {
   color: #af4242;
   background-color: #fde8ec;
   padding: 10px;
-  /*visibility: hidden;*/
   display: none;
 }
 .error.display-error {
@@ -83,4 +82,42 @@ h1 {
 
 form {
   margin: 0;
+}
+
+.fa-xl:hover {
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  cursor: pointer;
+}
+
+.read-more-container h2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 196.19%;
+  
+}
+
+p.slider-aname{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 196.19%;
+}
+
+p#read-more{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 196.19%;
+  text-align: justify;
+}
+
+.read-more-btn{
+  color: #e16a00 !important;
 }
