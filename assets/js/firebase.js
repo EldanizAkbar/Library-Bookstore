@@ -47,6 +47,7 @@ $(document).ready(async function (e) {
       password: "12345",
     },
   ];
+  
   await set(ref(adminLogin, "/admins"), admins);
   adminLogine(JSON.parse(localStorage.getItem("adminTrue")));
 
