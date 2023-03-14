@@ -102,6 +102,22 @@ $(document).ready(function (e) {
   }
 });
 
+
+onValue(ref(aboutAdmin, "/about"), async (snapshot) => {
+  const about = await snapshot.val();
+  if (!about) {
+    return;
+  }
+  console.log(about);
+  $("#nameInputTitle").val(about.title);
+  $("#nameInputDesc").val(about.desc);
+  $("#nameInputUrl").val(about.url);
+
+});
+
+
+
+
 $("#admin-about-store").on("click", async function (e) {
   e.preventDefault();
 
@@ -128,9 +144,6 @@ $("#admin-about-store").on("click", async function (e) {
   $(".join-error").fadeOut();
   $(".join-success").fadeIn(10);
 
-  adminAboutTitle.val("");
-  adminAboutDesc.val("");
-  adminAboutUrl.val("");
 
   setTimeout(function () {
     $(".join-error").fadeOut();

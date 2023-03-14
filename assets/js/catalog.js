@@ -52,6 +52,7 @@ $(".categorize").on("click", async function (e) {
     $("#first").slick("removeSlide", null, null, true);
 
     var booksJson = await snapshot.val();
+
     for (var index = 1; index < booksJson.length; index++) {
       var book = booksJson[index];
       if (book.title.length > 15 || book.authorName.length > 15) {
@@ -93,6 +94,7 @@ $(".categorize").on("click", async function (e) {
             "selectedBook",
             JSON.stringify(selectedBookJson)
           );
+          localStorage.setItem("selectedId", JSON.stringify(bookId));
         });
       });
     }
@@ -105,6 +107,7 @@ $(document).ready(function () {
   function myStopFunction() {
     $(".bg-orange").on("click", async function (e) {
       let bookId = $(this).attr("id");
+      localStorage.setItem("selectedId", JSON.stringify(bookId));
       var selectedBookJson = {};
       await onValue(ref(db, `/books/${bookId}`), async (snapshot) => {
         selectedBookJson = await snapshot.val();

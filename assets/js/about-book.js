@@ -22,9 +22,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const comments = getDatabase(app);
 const db = getDatabase(app);
+var id = JSON.parse(localStorage.getItem("selectedId"));
 
 $(document).ready(function () {
   var book = JSON.parse(localStorage.getItem("selectedBook"));
+
 
   var div = `
          
@@ -77,10 +79,13 @@ $("#send-comment").on("click", async function (e) {
     time: bakuTimeNow,
   };
 
-  const commentsBranch = ref(comments, "/comments");
+
+  
+
+  const commentsBranch = ref(comments,  `/books/${id}/comment`);
 
   const key = push(commentsBranch).key;
-  const newBranch = ref(comments, "/comments/" + key);
+  const newBranch = ref(comments, `/books/${id}/comment/` + key);
 
   await set(newBranch, userComment);
 
@@ -96,7 +101,7 @@ $("#send-comment").on("click", async function (e) {
 
 let commentsContainer = $("#comments-container");
 
-onValue(ref(comments, "/comments"), async (snapshot) => {
+onValue(ref(comments,`/books/${id}/comment`), async (snapshot) => {
   const comment = (await snapshot.val()) || {};
   let array = Object.entries(comment);
 

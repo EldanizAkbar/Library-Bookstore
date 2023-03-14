@@ -23,31 +23,7 @@ const app = initializeApp(firebaseConfig);
 const adminLogin = getDatabase(app);
 
 $(document).ready(async function (e) {
-  const admins = [
-    {
-      userName: "Eldaniz",
-      password: "12345",
-    },
-
-    {
-      userName: "Saleh",
-      password: "12345",
-    },
-    {
-      userName: "Irade",
-      password: "12345",
-    },
-
-    {
-      userName: "Faride",
-      password: "12345",
-    },
-    {
-      userName: "Mehman",
-      password: "12345",
-    },
-  ];
-  
+ 
   await set(ref(adminLogin, "/admins"), admins);
   adminLogine(JSON.parse(localStorage.getItem("adminTrue")));
 
