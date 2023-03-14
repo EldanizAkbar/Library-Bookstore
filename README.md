@@ -40,9 +40,9 @@ Create an account to save your favorite books and write comments
 Contributions are welcome! If you would like to contribute to the project, please follow these steps:
 
 * Fork the repository
-* Create a new branch: git checkout -b my-new-feature
-* Make changes and commit them: git commit -am 'Add some feature'
-* Push to the branch: git push origin my-new-feature
+* Create a new branch: `git checkout -b my-new-feature`
+* Make changes and commit them: `git commit -am 'Add some feature' `
+* Push to the branch: `git push origin my-new-feature`
 * Submit a pull request
 
 
