@@ -1,6 +1,8 @@
 # Book Library Website
 This is a book library website where users can search and get information about books, write comments for books, and create an account to save their favorite books. The website also includes an admin panel where administrators can update the website.
 
+Project figma link -- https://www.figma.com/file/aLL1Dtp6Qh4B6pSaGy8606/Library--Bookstore?node-id=0-1&t=01GVtvPJtIF5cuYF-0
+
 
 # Installation
 To run this project on your local machine, follow these steps:
