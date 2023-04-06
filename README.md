@@ -54,15 +54,11 @@ Contributions are welcome! If you would like to contribute to the project, pleas
 This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License - see the LICENSE file for details.
 
 # Contact
-If you have any questions or feedback, please contact us at:
+If you have any questions or feedback, please contact me at:
 
 
 * [Eldaniz Akbarzade](https://github.com/EldanizAkbar)
 
-* [MahammadSaleh Abbas](https://github.com/Mahammadsaleh)
-* [Farida Agayeva](https://github.com/FaridaAgayeva)
-* [Irada Feyzullayeva](https://github.com/iradakhf)
-* [Mehman Abdullayev](https://github.com/mehman-abdullayev)
 
 You can also open an issue in the GitHub repository.
 
